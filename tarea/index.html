@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tarea - Gestor de Tareas Interactivo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 30px auto;
+        padding: 0 10px;
+      }
+      h1 {
+        color: #2c3e50;
+      }
+      form {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 15px;
+      }
+      input[type="text"] {
+        flex: 1;
+        padding: 8px;
+        font-size: 14px;
+      }
+      select {
+        padding: 8px;
+      }
+      button {
+        padding: 8px 12px;
+        background-color: #27ae60;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #219150;
+      }
+      .error {
+        color: #c0392b;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+      li.completada {
+        text-decoration: line-through;
+        color: #7f8c8d;
+      }
+      .badge {
+        font-size: 11px;
+        padding: 3px 6px;
+        border-radius: 4px;
+        color: white;
+      }
+      .badge-alta {
+        background-color: #e74c3c;
+      }
+      .badge-media {
+        background-color: #f39c12;
+      }
+      .badge-baja {
+        background-color: #3498db;
+      }
+      .btn-borrar {
+        background-color: #e74c3c;
+        padding: 4px 8px;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mi Gestor de Tareas Interactivo</h1>
+
+    <form id="formTarea">
+      <input
+        id="txtTarea"
+        type="text"
+        placeholder="Escribe una nueva tarea..."
+      />
+      <select id="selPrioridad">
+        <option value="Alta">Alta</option>
+        <option value="Media" selected>Media</option>
+        <option value="Baja">Baja</option>
+      </select>
+      <button type="submit">Agregar Tarea</button>
+    </form>
+
+    <p id="msgError" class="error"></p>
+    <p id="txtFiltro">Filtro actual: <span id="lblFiltro">Todas</span></p>
+
+    <ul id="listaTareas"></ul>
+
+    <script src="app.js"></script>
+  </body>
+</html>
